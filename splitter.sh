@@ -15,4 +15,5 @@ for((i=0, start=1, end=$inc; i < ncol/inc + 1; i++, start+=inc, end+=inc)); do
   cut -f$start-$end "$infile" > "${infile}.$i"
 done
 
+#take file with all the first columns and find the unique IDs
 cat "${infile}".0 | sort | uniq > unique_ids.txt
